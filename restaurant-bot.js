@@ -4,9 +4,8 @@ $(document).ready(function() {
 
 $('button').on('click', function(event){
 	console.log("New order begins");
-	order();
-}
-);
+	// order();
+
 
 //==== Order Flow ====//
 var guestName = prompt("Sawadeeka! May I have your name, please?");
@@ -14,7 +13,7 @@ var tableFor = prompt(("Hi ") + guestName + (", how many guest?"));
 
 var gOrder = [];
 for(var i = 0; i < tableFor; i++) {
-    	gOrder.push(prompt("What would you like to order? Please select Set A, Set B or Set C."));
+    	gOrder.push(prompt("What would you like to order? Please type 'Set A', 'Set B' or 'Set C'."));
 	}
 
 var numSetA = 0;
@@ -27,10 +26,14 @@ for(var i = 0; i < gOrder.length; i++) {
 			numSetB += 1;
 		} else if(gOrder[i] === "Set C") {
 			numSetC += 1;
-		} else { console.log("invalid order");}
+		} else { 
+			alert("Invalid order. Please type 'Set A', 'Set B' or 'Set C'.");
+			location.reload();
+		}
 	}
 
-var sayOrder = console.log("Set A:" + numSetA + "." + " Set B:" + numSetB + "." + " Set C:" + numSetC + ".");
+var sayOrder = console.log("Set A:" + numSetA + "." + " Set B:" + numSetB + "." + " Set C:" + numSetC + "."); 
+alert("Your order is Set A:" + numSetA + "." + " Set B:" + numSetB + "." + " Set C:" + numSetC + ".");
 
 var subTotal = (numSetA * 10) + (numSetB * 12) + (numSetC * 15);
 
@@ -38,4 +41,6 @@ var gstTip = 0.1;
 
 var bill = (subTotal * gstTip + subTotal).toFixed(2);
 
-var sayBill = console.log("Please pay $ " + bill + " (10% gst included.) Thank you, see you again.");
+var sayBill = console.log("Kob khun ka! Your bill is $" + bill + " (10% gst included) Take a seat, your food is arriving shortly."); alert("Kob khun ka! Your bill is $" + bill + " (10% gst included). Please take a seat, your food is arriving shortly.");
+
+});
