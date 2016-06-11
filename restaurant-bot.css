@@ -40,7 +40,7 @@ h4 {
     border-radius: 3px;
     border: none;
     color: white;
-    width:80%;
+    width:90%;
     text-align: center;
 }
 
@@ -55,7 +55,7 @@ h4 {
 
 
 .set {
-    width: 300px;
+    /*width: 300px;*/
     margin: 10px;
     border-top: 10px solid lightsalmon;
     padding-top: 10px;
@@ -65,4 +65,18 @@ h4 {
 .set img {
     width: 100%;
     margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+    #menu {
+        flex-direction: column;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    h4 {
+        font-size: 1.2em;
+    }
 }
